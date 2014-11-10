@@ -36,7 +36,7 @@ import com.threed.jpct.*;
 
 
 class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
-	 	private static final int FLOAT_SIZE_BYTES = 4;
+	    private static final int FLOAT_SIZE_BYTES = 4;
 	    private static final int TRIANGLE_VERTICES_DATA_STRIDE_BYTES = 5 * FLOAT_SIZE_BYTES;
 	    private static final int TRIANGLE_VERTICES_DATA_POS_OFFSET = 0;
 	   // private static final int TRIANGLE_VERTICES_DATA_COLOR_OFFSET = 3; 
@@ -152,6 +152,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
 	    float[] a,b,c,d,e;
 	    float theta;
 	    int[] textures;
+	    
 	public GLES20TriangleRenderer(Context context) throws FileNotFoundException {
         mContext = context;
         scene = new JScene(context);
@@ -159,7 +160,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
         
        
         
-        Log.v("fyf",String.valueOf(scene.length_res));
+        	Log.v("fyf",String.valueOf(scene.length_res));
 		
 		Log.v("fyf",String.valueOf(scene.length_res1));
 		
@@ -170,21 +171,21 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
 		Log.v("fyf",String.valueOf(scene.length_res4));
 		
 		mTriangleVertices = ByteBuffer.allocateDirect(scene.length_res * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
-	    mTriangleVertices.put(scene.res).position(0);
+	    	mTriangleVertices.put(scene.res).position(0);
 	    
-	    mTriangleVertices1 = ByteBuffer.allocateDirect(scene.length_res1 * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
-	    mTriangleVertices1.put(scene.res1).position(0);
+		mTriangleVertices1 = ByteBuffer.allocateDirect(scene.length_res1 * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
+	    	mTriangleVertices1.put(scene.res1).position(0);
 	    
-	    mTriangleVertices2 = ByteBuffer.allocateDirect(scene.length_res2 * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
-	    mTriangleVertices2.put(scene.res2).position(0);
+	    	mTriangleVertices2 = ByteBuffer.allocateDirect(scene.length_res2 * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
+	    	mTriangleVertices2.put(scene.res2).position(0);
 	    
-	    mTriangleVertices3 = ByteBuffer.allocateDirect(scene.length_res3 * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
-	    mTriangleVertices3.put(scene.res3).position(0);
+	    	mTriangleVertices3 = ByteBuffer.allocateDirect(scene.length_res3 * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
+	    	mTriangleVertices3.put(scene.res3).position(0);
 	    
 	    //mTriangleVertices4 = ByteBuffer.allocateDirect(e.length * FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
 	    // mTriangleVertices4.put(e).position(0);*/
     }
-	//√ø“ª÷°µ˜”√“ª¥ŒµƒonDraw∫Ø ˝
+	//ÊØè‰∏ÄÂ∏ßË∞ÉÁî®‰∏ÄÊ¨°ÁöÑonDrawÂáΩÊï∞
     public void onDrawFrame(GL10 glUnused) {
         // Ignore the passed-in GL10 interface, and use the GLES20
         // class's static methods instead.
@@ -232,7 +233,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
         //Log.v("fyf",String.valueOf(System.currentTimeMillis()-time));
         
     }
-	//ªÊ÷∆»˝Ω«–Œ∫Ø ˝
+	//ÁªòÂà∂‰∏âËßíÂΩ¢ÂáΩÊï∞
     public void drawTriangle(final FloatBuffer mTriangleVertices,int vCount)
     {
     	mTriangleVertices.position(TRIANGLE_VERTICES_DATA_POS_OFFSET);
@@ -408,7 +409,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
        // Matrix.setLookAtM(mVMatrix, 0, 0, 0, -4f, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
        // Matrix.setLookAtM(mVMatrix, 0, scene.m_vEyePoint.x, scene.m_vEyePoint.y, scene.m_vEyePoint.z, scene.m_vGazePoint.x, scene.m_vGazePoint.y, scene.m_vGazePoint.z, scene.m_vUp.x, scene.m_vUp.y, scene.m_vUp.z);
     }
-	//‘ÿ»Îshader
+	//ËΩΩÂÖ•shader
     private int loadShader(int shaderType, String source) {
         int shader = GLES20.glCreateShader(shaderType);
         if (shader != 0) {
@@ -425,7 +426,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
         }
         return shader;
     }
-	//≥ı ºªØ≥Ã–Ú
+	//ÂàùÂßãÂåñÁ®ãÂ∫è
     private int createProgram(String vertexSource, String fragmentSource) {
         int vertexShader = loadShader(GLES20.GL_VERTEX_SHADER, vertexSource);
         if (vertexShader == 0) {
@@ -464,7 +465,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
         }
     }
     
-    //≥ı ºªØ“˝«Êshader
+    //ÂàùÂßãÂåñÂºïÊìéshader
     public void initEngineShader(){
     	
     	GLSLShader myshader = new GLSLShader(mVertexShader, mFragmentShader);
@@ -475,7 +476,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
     	
     }
     
-    //≥ı ºªØ“˝«ÊŒ∆¿Ì
+    //ÂàùÂßãÂåñÂºïÊìéÁ∫πÁêÜ
     public void initEngineTexture(){
     	
     	Bitmap aBitmap = null,bBitmap = null,cBitmap = null,dBitmap = null;
