@@ -19,7 +19,7 @@ import android.util.Log;
 public class JScene {
 	boolean 	m_bMesh;
 	int 		m_nWidth;
-	int		 	m_nHeight;
+	int		m_nHeight;
 	JMesh 		m_pCurrentMesh;
 	Vector3D 	m_vEyePoint;
 	Vector3D	m_vGazePoint;
@@ -34,7 +34,7 @@ public class JScene {
 	Vector3D 	leftN;
 	float		leftD;
 	Vector3D 	rightN;
-	float       rightD;
+	float       	rightD;
 	
 	JLabelPoint[] LPoints;
 	
@@ -51,16 +51,16 @@ public class JScene {
 	int 		length_res2;
 	
 	float[]		res3;
-	int			length_res3;
+	int		length_res3;
 	
-	float[]     res4;
-	int			length_res4;
+	float[]     	res4;
+	int		length_res4;
 	
 	int[]		textures;
 	int 		notinanytexture;
-	Context     context;
+	Context     	context;
 	
-	Camera      myCamera;
+	Camera      	myCamera;
 	
 	
 	public JScene(Context context) throws FileNotFoundException {
@@ -100,7 +100,7 @@ public class JScene {
 		return true;
 		
 	}
-	//ªÊ÷∆Õ¯∏Ò∫Ø ˝
+	//ÁªòÂà∂ÁΩëÊ†ºÂáΩÊï∞
 	public void DrawMesh(JMesh pMesh){
 		int vIndex1,vIndex2,vIndex3,vIndex4;
 		int jetMatIndex;
@@ -334,90 +334,8 @@ public class JScene {
 					length_res3+=30;
 					
 				}
-				if(mapId!=1&&mapId!=2&&mapId!=3&&mapId!=4)
-				{
+				if(mapId!=1&&mapId!=2&&mapId!=3&&mapId!=4){
 					notinanytexture++;
-					/*
-					Log.v("fyf", String.valueOf(pMesh.VertexTopoListList11[vIndex1].eastrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex1].eastrestV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex2].eastrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex2].eastrestV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex3].eastrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex3].eastrestV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex4].eastrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex4].eastrestV)+"\n"+"eastrestException!"
-							+"\n"+String.valueOf(pMesh.VertexTopoListList11[vIndex1].westrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex1].westrestV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex2].westrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex2].westrestV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex3].westrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex3].westrestV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex4].westrestU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex4].westrestV)+"\n"+"westrestException!"+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex1].northU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex1].northV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex2].northU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex2].northV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex3].northU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex3].northV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex4].northU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex4].northV)+"\n"+"northException"+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex1].southU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex1].southV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex2].southU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex2].southV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex3].southU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex3].southV)+"\n"
-							+String.valueOf(pMesh.VertexTopoListList11[vIndex4].southU)+" "+String.valueOf(pMesh.VertexTopoListList11[vIndex4].southV)+"\n"+"southException");
-					*/
-					/*
-					res4[length_res4] = pMesh.VertexTopoListList11[vIndex1].m_vPosition.x;
-					res4[length_res4+1] = pMesh.VertexTopoListList11[vIndex1].m_vPosition.y;
-					res4[length_res4+2] = pMesh.VertexTopoListList11[vIndex1].m_vPosition.z;
-					res4[length_res4+3] = 1.0f;
-					res4[length_res4+4] = 0.0f;
-					res4[length_res4+5] = 0.0f;
-					res4[length_res4+6] = 1.0f;
-					res4[length_res4+7] = 0.0f;
-					res4[length_res4+8] = 0.0f;
-					
-					res4[length_res4+9] = pMesh.VertexTopoListList11[vIndex2].m_vPosition.x;
-					res4[length_res4+10] = pMesh.VertexTopoListList11[vIndex2].m_vPosition.y;
-					res4[length_res4+11] = pMesh.VertexTopoListList11[vIndex2].m_vPosition.z;
-					res4[length_res4+12] = 0.0f;
-					res4[length_res4+13] = 1.0f;
-					res4[length_res4+14] = 0.0f;
-					res4[length_res4+15] = 1.0f;
-					res4[length_res4+16] = 1.0f;
-					res4[length_res4+17] = 1.0f;
-					
-					res4[length_res4+18] = pMesh.VertexTopoListList11[vIndex3].m_vPosition.x;
-					res4[length_res4+19] = pMesh.VertexTopoListList11[vIndex3].m_vPosition.y;
-					res4[length_res4+20] = pMesh.VertexTopoListList11[vIndex3].m_vPosition.z;
-					res4[length_res4+21] = 0.0f;
-					res4[length_res4+22] = 0.0f;
-					res4[length_res4+23] = 1.0f;
-					res4[length_res4+24] = 1.0f;
-					res4[length_res4+25] = 0.0f;
-					res4[length_res4+26] = 1.0f;
-					
-					res4[length_res4+27] = pMesh.VertexTopoListList11[vIndex3].m_vPosition.x;
-					res4[length_res4+28] = pMesh.VertexTopoListList11[vIndex3].m_vPosition.y;
-					res4[length_res4+29] = pMesh.VertexTopoListList11[vIndex3].m_vPosition.z;
-					res4[length_res4+30] = 1.0f;
-					res4[length_res4+31] = 0.0f;
-					res4[length_res4+32] = 0.0f;
-					res4[length_res4+33] = 1.0f;
-					res4[length_res4+34] = 0.0f;
-					res4[length_res4+35] = 1.0f;
-					
-					res4[length_res4+36] = pMesh.VertexTopoListList11[vIndex4].m_vPosition.x;
-					res4[length_res4+37] = pMesh.VertexTopoListList11[vIndex4].m_vPosition.y;
-					res4[length_res4+38] = pMesh.VertexTopoListList11[vIndex4].m_vPosition.z;
-					res4[length_res4+39] = 0.0f;
-					res4[length_res4+40] = 1.0f;
-					res4[length_res4+41] = 0.0f;
-					res4[length_res4+42] = 1.0f;
-					res4[length_res4+43] = 1.0f;
-					res4[length_res4+44] = 0.0f;
-					
-					res4[length_res4+45] = pMesh.VertexTopoListList11[vIndex1].m_vPosition.x;
-					res4[length_res4+46] = pMesh.VertexTopoListList11[vIndex1].m_vPosition.y;
-					res4[length_res4+47] = pMesh.VertexTopoListList11[vIndex1].m_vPosition.z;
-					res4[length_res4+48] = 0.0f;
-					res4[length_res4+49] = 0.0f;
-					res4[length_res4+50] = 1.0f;
-					res4[length_res4+51] = 1.0f;
-					res4[length_res4+52] = 0.0f;
-					res4[length_res4+53] = 0.0f;
-					
-					length_res4+=54;
-					*/
 				}
 			}
 		}
@@ -436,7 +354,7 @@ public class JScene {
 	public void Move(int x,int y){
 		
 	}
-	//≈–∂œ∏˘æ› ÷ ∆Ω¯––µƒ‘¬«Ú–˝◊™
+	//Âà§Êñ≠Ê†πÊçÆÊâãÂäøËøõË°åÁöÑÊúàÁêÉÊóãËΩ¨
 	public void Rotate(float a,float b){
 		
 		//Vector3D w=m_vUp^m_vFront;
@@ -456,7 +374,7 @@ public class JScene {
 		//Log.v("fy", String.valueOf(m_vEyePoint.x)+" "+String.valueOf(m_vEyePoint.y)+" "+String.valueOf(m_vEyePoint.z));
 		
 	}
-	//“˝«Êøÿ÷∆µƒ–˝◊™
+	//ÂºïÊìéÊéßÂà∂ÁöÑÊóãËΩ¨
 	public void engineRotate(float a, float b){
 		
 		SimpleVector w = myCamera.getUpVector().calcCross(myCamera.getDirection());
@@ -472,7 +390,7 @@ public class JScene {
 	public void Scale(int d){
 		
 	}
-	// ”“∞≈–∂œ
+	//ËßÜÈáéÂà§Êñ≠
 	public void WhichFaceInview(Vector3D m_vEyePoint1,Vector3D m_vGazePoint1,Vector3D m_vUp1){
 		Vector3D viewDir = new Vector3D(m_vGazePoint1.x-m_vEyePoint1.x,m_vGazePoint1.y-m_vEyePoint1.y,m_vGazePoint1.z-m_vEyePoint1.z);
 		viewDir.normalize();
@@ -571,7 +489,7 @@ public class JScene {
 		
 		
 	}
-	//≥ı ºªØŒ∆¿Ì
+	//ÂàùÂßãÂåñÁ∫πÁêÜ
 	public void InitTexture(){
 		
 		GLES20.glEnable(GLES20.GL_TEXTURE_2D);
@@ -608,60 +526,6 @@ public class JScene {
 		GLUtils.texImage2D(GLES20.GL_TEXTURE_2D,0,bitmapTmp,0);
 		bitmapTmp.recycle();
 		
-		
-		/*
-		
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textures[1]);
-		GLES20.glEnable(GLES20.GL_DEPTH_TEST);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
-		is = context.getResources().openRawResource(R.drawable.westrest);
-		bitmapTmp = BitmapFactory.decodeStream(is);
-		try {
-			is.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		GLUtils.texImage2D(GLES20.GL_TEXTURE_2D,0,bitmapTmp,0);
-		bitmapTmp.recycle();
-		
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textures[2]);
-		GLES20.glEnable(GLES20.GL_DEPTH_TEST);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
-		is = context.getResources().openRawResource(R.drawable.northpole);
-		bitmapTmp = BitmapFactory.decodeStream(is);
-		try {
-			is.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		GLUtils.texImage2D(GLES20.GL_TEXTURE_2D,0,bitmapTmp,0);
-		bitmapTmp.recycle();
-		
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textures[3]);
-		GLES20.glEnable(GLES20.GL_DEPTH_TEST);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
-		GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
-		is = context.getResources().openRawResource(R.drawable.southpole);
-		bitmapTmp = BitmapFactory.decodeStream(is);
-		try {
-			is.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		GLUtils.texImage2D(GLES20.GL_TEXTURE_2D,0,bitmapTmp,0);
-		bitmapTmp.recycle();
-		*/
 		Log.v("fyf",String.valueOf(GLES20.glGetError())+" Did you find it?");
 	}
 	
