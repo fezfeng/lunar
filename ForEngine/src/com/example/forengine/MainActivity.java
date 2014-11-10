@@ -18,15 +18,15 @@ import java.io.FileNotFoundException;
 
 public class MainActivity extends Activity {
 
-    	private BasicGLSurfaceView mView;
-    	float x1=0.0f,x2=0.0f;
-	float y1=0.0f,y2=0.0f;
-	float difx=0.0f,dify=0.0f;
-	static final int NONE = 0;
-	static final int DRAG = 1;
-	static final int ZOOM = 2;
-	int mode = NONE;
-	float oldDist = 1.0f;
+    private BasicGLSurfaceView mView;
+    float x1=0.0f,x2=0.0f;
+    float y1=0.0f,y2=0.0f;
+    float difx=0.0f,dify=0.0f;
+    static final int NONE = 0;
+    static final int DRAG = 1;
+    static final int ZOOM = 2;
+    int mode = NONE;
+    float oldDist = 1.0f;
 	
 
     @Override
